@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cajero Automatico</title>
+</head>
+<body>
+    <!--Formulario para autenticar el acceso a las cuentas-->
+    <form action="">
+        <h1>Acceso</h1>
+        <label for="">Usuario</label>
+        <input type="text" name="u" id="">
+        <label for="">password</label>
+        <input type="password" name="c" id="">
+        <!--se invoca a la funcion login y se le pasa los parametros del form-->
+        <input type="button" value="Ingresar" onclick="login(this.form)">
+    </form>
+    <!--scrip de js para validar usuario y contraseña, solo de forma interna, es decir no hace consulta a una bd-->
+    <!-- se verifican los parametros de los name u y c que corresponden al usuario y contraseña del form-->
+    <!-- esta parte se puede mejorar si la informacion se consulta de una bd-->
+    <script>        
+        function login(form){
+            if(form.u.value=="Daniel"){
+                if(form.c.value=="300475"){
+                    location="menuprincipal.html";
+                }else{
+                    alert("error de contraseña")
+                }
+            }else{
+                alert("error de usuario");
+            }            
+        }
+    </script>
+    
+</body>
+</html>

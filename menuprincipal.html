@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+</head>
+<body>
+    <h1>Bienvenido a tu cajero</h1>
+    
+    <label for="">Tu Saldo es: </label>
+    <input type="text" name="Saldo" id="Saldo" value="5000">
+    <label for="">Puedes retirar hasta:</label>
+    <input type="text" name="maximoRetiro" id="Retiro" value="9000">
+    <label for="">Tengo Billetes desde:</label>
+    <input type="text" name="billetesMaximo" id="Billetes" value="100">
+    <form action="">
+        <h2>Retirar</h2>
+        <input type="text" name="" id="Cant" placeholder="$">
+        <input type="button" value="Retiro de cuenta" id="bt1" onclick="retiroCta()">        
+    </form>
+    <script>
+        function retiroCta(){            
+            var control = parseInt(document.getElementById('Cant').value);
+            var cantidadTotal=parseInt(document.getElementById('Cant').value);
+            var cantidad=parseInt(document.getElementById('Saldo').value);        
+
+            /* Tres condiciones para retirar, primero no debe pasar de 9,000 y segundo debe ser multiplo de $100, el retiro no debe ser superior al saldo */
+            if(control<=cantidad){
+                if (cantidadTotal <= 9000){
+                    if ( (control%100) == 0 ){               
+                        document.getElementById('Saldo').value=(cantidad-cantidadTotal);
+                    }else alert("No se puede entregar esa cantidad, debe ser multiplo de $100.00");
+                }else alert('sobre pasa la cantidad maxima a retirar')    
+            }else alert('Quieres retirar mas dinero de lo que tienes en tu cuanta')
+            
+
+                
+        }
+    </script>
+</body>
+</html>
